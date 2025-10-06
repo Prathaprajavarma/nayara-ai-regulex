@@ -1,146 +1,136 @@
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Zap, Shield, FileCheck, Activity, TrendingUp, Database } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { Brain, Database, Shield, Activity, TrendingUp, Zap } from "lucide-react";
+import humanArm from "@/assets/human-arm.png";
+import robotArm from "@/assets/robot-arm.png";
+import ganttChart from "@/assets/gantt-chart-sample.png";
 
 const Product = () => {
   return (
-    <div className="min-h-screen pt-24 pb-12">
-      <div className="container mx-auto px-4 lg:px-8">
-        {/* Hero Section */}
+    <div className="min-h-screen pt-24 pb-12 relative overflow-hidden">
+      {/* Parallax Arms */}
+      <div className="fixed left-0 top-1/4 w-1/3 z-0 opacity-20 pointer-events-none animate-float">
+        <img src={humanArm} alt="Human Arm" className="w-full h-auto" />
+      </div>
+      <div className="fixed right-0 top-1/4 w-1/3 z-0 opacity-20 pointer-events-none animate-float" style={{ animationDelay: "1s" }}>
+        <img src={robotArm} alt="Robot Arm" className="w-full h-auto transform scale-x-[-1]" />
+      </div>
+
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <div className="inline-block px-6 py-2 bg-gold/10 text-gold rounded-full text-sm font-semibold mb-6">
-            Coming Soon
+          <div className="inline-block px-4 py-2 bg-gold/10 rounded-full mb-4">
+            <span className="text-gold font-semibold">Coming Soon</span>
           </div>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            SITA-AI<sup className="text-2xl">™</sup>
-          </h1>
-          <p className="text-2xl text-coral font-semibold mb-4">
-            FREC-QMS AI Regulatory Intelligence Platform
+          <h1 className="text-5xl font-bold mb-4">SITA-AI™</h1>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Software as Medical Device - Comprehensive data collection, validation, and evaluation
+            for regulatory compliance and quality management
           </p>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive Software as Medical Device for regulatory compliance and quality
-            management using our proprietary AI technology
+          <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
+            Our proprietary FREC-QMS AI provides REGULATORY INTELLIGENCE actively engaged with global 
+            regulatory agencies and notified bodies to identify potential changes affecting your medical 
+            device and provides facts for decision making.
           </p>
         </div>
 
-        {/* Overview */}
-        <div className="max-w-4xl mx-auto mb-20">
-          <Card className="p-8 bg-gradient-hero shadow-elegant">
-            <p className="text-lg leading-relaxed text-muted-foreground">
-              SITA-AI™ is our proprietary FREC-QMS AI platform that comprehensively collects,
-              validates, and evaluates data for regulatory compliance and quality management. The
-              system integrates data from finance, engineering, clinical, quality, regulatory,
-              vigilance, marketing, and operations to provide regulatory intelligence and strategic
-              insights for global market access.
-            </p>
-          </Card>
-        </div>
-
-        {/* Core Services */}
+        {/* Gantt Chart Visualization */}
         <div className="mb-20">
-          <h2 className="text-4xl font-bold mb-12 text-center">Core Services</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4">Strategic Global Market Access</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Data collected from finance, engineering, clinical, quality, regulatory, vigilance, 
+              marketing, and operations visualized as a Gantt chart for comprehensive strategy planning
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto">
+            <img src={ganttChart} alt="Medical Device Project Gantt Chart" className="w-full rounded-xl shadow-elegant" />
+          </div>
+        </div>
+
+        {/* Core Services with Hover Effects */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-center mb-12">Our Core Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <Brain className="h-12 w-12 text-coral mb-4" />
-              <h3 className="text-xl font-bold mb-3">Regulatory Intelligence</h3>
-              <ul className="space-y-2 text-muted-foreground">
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <Zap className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Regulatory Intelligence</h3>
+              <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
                 <li>• Real-time global regulatory updates</li>
                 <li>• Automated reporting & submissions</li>
               </ul>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <Shield className="h-12 w-12 text-gold mb-4" />
-              <h3 className="text-xl font-bold mb-3">Risk Management System</h3>
-              <ul className="space-y-2 text-muted-foreground">
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <Shield className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Risk Management System (RMS)</h3>
+              <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
                 <li>• Predictive analytics for adverse events</li>
                 <li>• Risk mitigation recommendations</li>
               </ul>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <Zap className="h-12 w-12 text-coral mb-4" />
-              <h3 className="text-xl font-bold mb-3">Quality Management System</h3>
-              <ul className="space-y-2 text-muted-foreground">
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <FileCheck className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Quality Management System (QMS)</h3>
+              <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
                 <li>• CAPA automation</li>
-                <li>• FDA, ISO 13485, EU MDR compliance</li>
+                <li>• Compliance with FDA, ISO 13485, EU MDR</li>
               </ul>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <Activity className="h-12 w-12 text-gold mb-4" />
-              <h3 className="text-xl font-bold mb-3">Clinical & Post-Market Surveillance</h3>
-              <ul className="space-y-2 text-muted-foreground">
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <Activity className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Clinical & Post-Market Surveillance</h3>
+              <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
                 <li>• AI-driven signal detection</li>
                 <li>• Integration with ARGUS, CDSCO AEQ</li>
               </ul>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <TrendingUp className="h-12 w-12 text-coral mb-4" />
-              <h3 className="text-xl font-bold mb-3">Engineering & Financial Integration</h3>
-              <ul className="space-y-2 text-muted-foreground">
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <TrendingUp className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Engineering & Financial Data Integration</h3>
+              <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
                 <li>• Design traceability</li>
                 <li>• Real-time financial impact assessments</li>
               </ul>
             </Card>
 
-            <Card className="p-6 hover:shadow-elegant transition-all">
-              <Database className="h-12 w-12 text-gold mb-4" />
-              <h3 className="text-xl font-bold mb-3">Custom Consulting & API</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Custom integrations</li>
-                <li>• Legacy data migration</li>
-              </ul>
+            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <Zap className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Custom Consulting & API Integrations</h3>
+              <p className="text-muted-foreground group-hover:text-foreground transition-colors">
+                Tailored solutions for your unique regulatory and compliance needs
+              </p>
+            </Card>
+
+            <Card className="p-6 md:col-span-2 lg:col-span-3 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
+              <Database className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+              <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Data Migration</h3>
+              <div className="grid md:grid-cols-4 gap-4 text-muted-foreground group-hover:text-foreground transition-colors">
+                <div>• Legacy products</div>
+                <div>• Paper-based products</div>
+                <div>• Electronic data from various platforms</div>
+                <div>• Electronic data from various sources</div>
+              </div>
             </Card>
           </div>
         </div>
 
-        {/* Data Integration */}
-        <div className="mb-20">
-          <h2 className="text-4xl font-bold mb-12 text-center">Data Migration Capabilities</h2>
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <Card className="p-6 text-center hover:shadow-elegant transition-all">
-              <h3 className="text-xl font-bold mb-3">Legendary Products</h3>
-              <p className="text-muted-foreground">Legacy system migration support</p>
-            </Card>
-
-            <Card className="p-6 text-center hover:shadow-elegant transition-all">
-              <h3 className="text-xl font-bold mb-3">Paper-Based Records</h3>
-              <p className="text-muted-foreground">Digital transformation services</p>
-            </Card>
-
-            <Card className="p-6 text-center hover:shadow-elegant transition-all">
-              <h3 className="text-xl font-bold mb-3">Electronic Data</h3>
-              <p className="text-muted-foreground">Multi-platform data consolidation</p>
-            </Card>
+        {/* Human & Robot Handshake Section */}
+        <div className="mt-32 relative">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="flex items-center gap-0">
+              <img src={humanArm} alt="Human Partnership" className="w-64 h-auto opacity-80" />
+              <img src={robotArm} alt="AI Innovation" className="w-64 h-auto opacity-80 transform scale-x-[-1]" />
+            </div>
           </div>
-        </div>
-
-        {/* Visualization */}
-        <div className="bg-gradient-hero rounded-2xl p-12 shadow-elegant text-center">
-          <h2 className="text-3xl font-bold mb-4">Strategic Visualization</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Data collected from finance, engineering, clinical, quality, regulatory, vigilance,
-            marketing, and operations is visualized as a Gantt chart for comprehensive strategies
-            for global market access
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
-                Request Early Access
-              </Button>
-            </Link>
-            <Link to="/services">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-coral text-coral hover:bg-coral hover:text-white"
-              >
-                Explore Current Services
-              </Button>
-            </Link>
+          <div className="relative z-10 text-center py-20">
+            <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
+              Human Expertise Meets AI Innovation
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Where regulatory intelligence and artificial intelligence unite
+            </p>
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -21,10 +21,20 @@ interface Service {
   summary: string;
   details: string;
   features?: string[];
+  isComingSoon?: boolean;
 }
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const navigate = useNavigate();
+
+  const handleServiceClick = (service: Service) => {
+    if (service.isComingSoon) {
+      navigate("/product");
+    } else {
+      setSelectedService(service);
+    }
+  };
 
   const services: Service[] = [
     {
@@ -129,6 +139,7 @@ const Services = () => {
         "Actively engaged with agencies to identify regulatory changes affecting your products. (Coming Soon)",
       details:
         "Our proprietary SITA-AI™ system continuously monitors global regulatory landscapes, identifying emerging requirements, guideline updates, and market access opportunities. This service provides proactive intelligence for strategic decision-making.",
+      isComingSoon: true,
     },
   ];
 
@@ -147,7 +158,7 @@ const Services = () => {
             <Card
               key={index}
               className="p-6 hover:shadow-elegant transition-all duration-300 cursor-pointer group"
-              onClick={() => setSelectedService(service)}
+              onClick={() => handleServiceClick(service)}
             >
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-gradient-coral rounded-xl text-white group-hover:scale-110 transition-transform">
