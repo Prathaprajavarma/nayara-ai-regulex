@@ -117,14 +117,24 @@ const Product = () => {
         </div>
 
         {/* Human & Robot Handshake Section */}
-        <div className="mt-32 relative">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="flex items-center gap-0">
-              <img src={humanArm} alt="Human Partnership" className="w-64 h-auto opacity-80" />
-              <img src={robotArm} alt="AI Innovation" className="w-64 h-auto opacity-80 transform scale-x-[-1]" />
+        <div className="mt-32 relative min-h-[600px] flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
+            <div className="flex items-center justify-center gap-0 relative">
+              <img 
+                src={humanArm} 
+                alt="Human Partnership" 
+                className="w-80 h-auto opacity-90 animate-fade-in" 
+                style={{ transform: "translateX(20px)" }}
+              />
+              <img 
+                src={robotArm} 
+                alt="AI Innovation" 
+                className="w-80 h-auto opacity-90 transform scale-x-[-1] animate-fade-in" 
+                style={{ animationDelay: "0.3s", transform: "translateX(-20px) scaleX(-1)" }}
+              />
             </div>
           </div>
-          <div className="relative z-10 text-center py-20">
+          <div className="relative z-10 text-center py-20 px-4">
             <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
               Human Expertise Meets AI Innovation
             </h2>
