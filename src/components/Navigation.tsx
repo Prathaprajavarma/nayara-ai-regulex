@@ -37,6 +37,15 @@ const Navigation = () => {
             <Link to="/resources" className="text-foreground hover:text-coral transition-colors">
               Resources
             </Link>
+            <Link to="/auth" className="text-foreground hover:text-coral transition-colors">
+              Login
+            </Link>
+            <Link to="/careers" className="text-foreground hover:text-coral transition-colors">
+              Careers
+            </Link>
+            <Link to="/contact" className="text-foreground hover:text-coral transition-colors">
+              Contact
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -52,6 +61,41 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 animate-fade-in">
             <div className="flex flex-col gap-4">
+              <Link
+                to="/"
+                className="text-foreground hover:text-coral transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="text-foreground hover:text-coral transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to="/services"
+                className="text-foreground hover:text-coral transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Services
+              </Link>
+              <Link
+                to="/product"
+                className="text-foreground hover:text-coral transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Product
+              </Link>
+              <Link
+                to="/resources"
+                className="text-foreground hover:text-coral transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                Resources
+              </Link>
               <Link
                 to="/auth"
                 className="text-foreground hover:text-coral transition-colors font-medium"

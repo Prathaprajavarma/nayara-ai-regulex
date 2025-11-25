@@ -16,7 +16,7 @@ const Home = () => {
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/30" />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center animate-fade-in">
