@@ -17,17 +17,6 @@ const About = () => {
       ],
     },
     {
-      name: "Claudia Andriamananjara-Cunderlik",
-      title: "Regulatory",
-      experience: "15 years",
-      expertise: "Medical Device, Software as Medical Device, In-vitro Diagnostics",
-      linkedin: "https://www.linkedin.com/in/claudiainminnesota/",
-      testimonials: [
-        "Extensive experience in EU MDR compliance",
-        "Specialized in high-risk implantable devices and IVD regulations",
-      ],
-    },
-    {
       name: "Sophia Boucher",
       title: "Product Expert",
       experience: "12 years",

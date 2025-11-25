@@ -95,7 +95,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-12 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/60">
-          NAYARAi ©{currentYear}. All rights reserved.
+          NAYARAi ©2025. All rights reserved.
         </div>
       </div>
     </footer>
