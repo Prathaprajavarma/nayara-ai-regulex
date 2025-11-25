@@ -60,26 +60,19 @@ const Navigation = () => {
                 Login / Sign Up
               </Link>
               <Link
-                to="/contact"
-                className="text-foreground hover:text-coral transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Connect
-              </Link>
-              <Link
                 to="/careers"
                 className="text-foreground hover:text-coral transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 Careers
               </Link>
-              <a
-                href="#subscribe"
+              <Link
+                to="/contact"
                 className="text-foreground hover:text-coral transition-colors"
                 onClick={() => setIsOpen(false)}
               >
-                Subscribe
-              </a>
+                Contact
+              </Link>
             </div>
           </div>
         )}

@@ -61,34 +61,49 @@ const Footer = () => {
 
           {/* Social & Subscribe */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Connect</h3>
+            <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
             <div className="flex gap-3 mb-4">
               <a
-                href="#"
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                aria-label="YouTube"
               >
                 <Youtube className="h-5 w-5" />
               </a>
             </div>
-            <Link to="/contact" className="text-sm text-coral hover:underline">
+            <p className="text-sm text-primary-foreground/80 mb-2">
+              Accelerated Approvals with Automated Accordance
+            </p>
+            <Link to="/contact" className="text-sm text-coral hover:underline inline-block">
               Subscribe for Updates →
             </Link>
           </div>
