@@ -21,15 +21,14 @@ const Home = () => {
 
         <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Navigate Regulatory Landscape
-            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
-              with Confidence
+              Accelerated Approvals
             </span>
+            <br />
+            with Automated Accordance
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Expert regulatory strategies and compliance solutions for healthcare products and
-            quality management
+            Expert regulatory strategies and compliance solutions for healthcare products
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/services">
@@ -78,8 +77,7 @@ const Home = () => {
                 <h2 className="text-3xl font-bold">Mission</h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                To provide regulatory solutions for your product and promote your vision in solving
-                global health challenges.
+                To provide global regulatory solutions for your product in effective timeline.
               </p>
             </div>
           </div>

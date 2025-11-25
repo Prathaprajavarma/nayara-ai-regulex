@@ -154,6 +154,39 @@ const Careers = () => {
       ],
       skills: ["Figma", "Adobe XD", "Usability Testing", "User-Centered Design"],
     },
+    {
+      title: "Data Engineers",
+      description: "Handle architecture, cleaning, and preparation of large datasets ensuring data integrity.",
+      responsibilities: [
+        "Build data pipelines and ETL processes",
+        "Manage SQL and NoSQL databases",
+        "Ensure data quality and accuracy",
+        "Optimize data storage and retrieval",
+      ],
+      skills: ["ETL Processes", "SQL/NoSQL", "Data Pipelines", "Data Warehousing"],
+    },
+    {
+      title: "Compliance and Validation Experts",
+      description: "Ensure software adheres to regulatory requirements and guide compliance audits.",
+      responsibilities: [
+        "Validate software systems per FDA 21 CFR Part 11",
+        "Conduct compliance audits",
+        "Develop validation protocols",
+        "Maintain regulatory documentation",
+      ],
+      skills: ["FDA 21 CFR Part 11", "Software Validation", "Compliance Auditing", "GxP Systems"],
+    },
+    {
+      title: "Cyber Security and Privacy Experts",
+      description: "Implement security protocols and ensure data privacy compliance for sensitive data.",
+      responsibilities: [
+        "Implement security protocols and controls",
+        "Ensure HIPAA and GDPR compliance",
+        "Conduct security assessments",
+        "Manage incident response",
+      ],
+      skills: ["HIPAA", "GDPR", "Security Protocols", "Penetration Testing", "Encryption"],
+    },
   ];
 
   return (
