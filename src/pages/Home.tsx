@@ -2,50 +2,72 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Target, Lightbulb } from "lucide-react";
 import worldMapHero from "@/assets/world-map-hero.jpg";
+import { useEffect } from "react";
 
 const Home = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const mapBg = document.getElementById("world-map-bg");
+      if (mapBg) {
+        const scale = 1 + scrolled * 0.0005;
+        mapBg.style.transform = `scale(${Math.min(scale, 1.3)})`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Hero Section - World Map */}
+      <section className="relative h-screen overflow-hidden">
         <div
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 z-0 transition-transform duration-700 ease-out"
           style={{
             backgroundImage: `url(${worldMapHero})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
+            transform: "scale(1)",
           }}
+          id="world-map-bg"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/10 to-background/30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
         </div>
+      </section>
 
-        <div className="relative z-10 container mx-auto px-4 lg:px-8 text-center animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
-              Accelerated Approvals
-            </span>
-            <br />
-            with Automated Accordance
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Expert regulatory strategies and compliance solutions for healthcare products
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/services">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
-                Explore Services
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-coral text-coral hover:bg-coral hover:text-white text-lg px-8"
-              >
-                Schedule Consultation
-              </Button>
-            </Link>
+      {/* Content Section Below Map */}
+      <section className="relative -mt-32 z-10 pb-24">
+        <div className="container mx-auto px-4 lg:px-8 text-center animate-fade-in">
+          <div className="bg-background/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-elegant max-w-5xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
+                Accelerated Approvals
+              </span>
+              <br />
+              with Automated Accordance
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Expert regulatory strategies and compliance solutions for healthcare products
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/services">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8">
+                  Explore Services
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/contact">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-coral text-coral hover:bg-coral hover:text-white text-lg px-8"
+                >
+                  Schedule Consultation
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
