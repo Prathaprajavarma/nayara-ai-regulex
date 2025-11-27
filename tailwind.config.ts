@@ -47,12 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        coral: "hsl(var(--coral))",
         gold: "hsl(var(--gold))",
+        "pink-pearl": "hsl(var(--pink-pearl))",
+        grey: "hsl(var(--grey))",
+        black: "hsl(var(--black))",
       },
       backgroundImage: {
-        'gradient-coral': 'var(--gradient-coral)',
         'gradient-gold': 'var(--gradient-gold)',
+        'gradient-pink': 'var(--gradient-pink)',
         'gradient-hero': 'var(--gradient-hero)',
       },
       boxShadow: {
