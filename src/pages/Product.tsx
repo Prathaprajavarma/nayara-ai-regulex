@@ -2,17 +2,26 @@ import { Zap, Shield, FileCheck, Activity, TrendingUp, Database } from "lucide-r
 import { Card } from "@/components/ui/card";
 import humanArm from "@/assets/human-arm.png";
 import robotArm from "@/assets/robot-arm.png";
-import ganttChart from "@/assets/gantt-chart-sample.png";
 
 const Product = () => {
   return (
     <div className="min-h-screen pt-24 pb-12 relative overflow-hidden">
-      {/* Parallax Arms */}
-      <div className="fixed left-0 top-1/4 w-1/3 z-0 opacity-20 pointer-events-none animate-float">
-        <img src={humanArm} alt="Human Arm" className="w-full h-auto" />
-      </div>
-      <div className="fixed right-0 top-1/4 w-1/3 z-0 opacity-20 pointer-events-none animate-float" style={{ animationDelay: "1s" }}>
-        <img src={robotArm} alt="Robot Arm" className="w-full h-auto transform scale-x-[-1]" />
+      {/* Background Handshake */}
+      <div className="fixed inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div className="flex items-center justify-center gap-0 relative opacity-15">
+          <img 
+            src={humanArm} 
+            alt="Human Expertise" 
+            className="w-[500px] h-auto animate-float" 
+            style={{ transform: "translateX(50px)" }}
+          />
+          <img 
+            src={robotArm} 
+            alt="AI Intelligence" 
+            className="w-[500px] h-auto transform scale-x-[-1] animate-float" 
+            style={{ animationDelay: "1s", transform: "translateX(-50px) scaleX(-1)" }}
+          />
+        </div>
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -32,116 +41,82 @@ const Product = () => {
           </p>
         </div>
 
-        {/* Gantt Chart Visualization */}
-        <div className="mb-20">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Strategic Global Market Access</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Data collected from finance, engineering, clinical, quality, regulatory, vigilance, 
-              marketing, and operations visualized as a Gantt chart for comprehensive strategy planning
-            </p>
-          </div>
-          <div className="max-w-5xl mx-auto">
-            <img src={ganttChart} alt="Medical Device Project Gantt Chart" className="w-full rounded-xl shadow-elegant" />
-          </div>
-        </div>
 
-        {/* Core Services with Hover Effects */}
+        {/* Core Services with Enhanced Zoom Animations */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center mb-12">Our Core Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <Zap className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-coral">
+              <Zap className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Regulatory Intelligence</h3>
               <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <li>• Real-time global regulatory updates</li>
-                <li>• Automated reporting & submissions</li>
+                <li>• <strong className="text-coral">Real-time</strong> global regulatory updates</li>
+                <li>• <strong className="text-gold">Automated</strong> reporting & submissions</li>
               </ul>
             </Card>
 
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <Shield className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-gold">
+              <Shield className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Risk Management System (RMS)</h3>
               <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <li>• Predictive analytics for adverse events</li>
-                <li>• Risk mitigation recommendations</li>
+                <li>• <strong className="text-coral">Predictive analytics</strong> for adverse events</li>
+                <li>• <strong className="text-gold">Risk mitigation</strong> recommendations</li>
               </ul>
             </Card>
 
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <FileCheck className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-coral">
+              <FileCheck className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Quality Management System (QMS)</h3>
               <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <li>• CAPA automation</li>
-                <li>• Compliance with FDA, ISO 13485, EU MDR</li>
+                <li>• <strong className="text-gold">CAPA automation</strong></li>
+                <li>• <strong className="text-coral">Compliance</strong> with FDA, ISO 13485, EU MDR</li>
               </ul>
             </Card>
 
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <Activity className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-gold">
+              <Activity className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Clinical & Post-Market Surveillance</h3>
               <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <li>• AI-driven signal detection</li>
-                <li>• Integration with ARGUS, CDSCO AEQ</li>
+                <li>• <strong className="text-coral">AI-driven</strong> signal detection</li>
+                <li>• <strong className="text-gold">Integration</strong> with ARGUS, CDSCO AEQ</li>
               </ul>
             </Card>
 
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <TrendingUp className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-coral">
+              <TrendingUp className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Engineering & Financial Data Integration</h3>
               <ul className="space-y-2 text-muted-foreground group-hover:text-foreground transition-colors">
-                <li>• Design traceability</li>
-                <li>• Real-time financial impact assessments</li>
+                <li>• <strong className="text-gold">Design traceability</strong></li>
+                <li>• <strong className="text-coral">Real-time</strong> financial impact assessments</li>
               </ul>
             </Card>
 
-            <Card className="p-6 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <Zap className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-gold">
+              <Zap className="h-10 w-10 text-gold mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-gold transition-colors">Custom Consulting & API Integrations</h3>
               <p className="text-muted-foreground group-hover:text-foreground transition-colors">
-                Tailored solutions for your unique regulatory and compliance needs
+                <strong className="text-coral">Tailored solutions</strong> for your unique regulatory and compliance needs
               </p>
             </Card>
 
-            <Card className="p-6 md:col-span-2 lg:col-span-3 group hover:shadow-glow transition-all duration-300 hover:scale-105 cursor-pointer">
-              <Database className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow" />
+            <Card className="p-6 md:col-span-2 lg:col-span-3 group hover:shadow-glow transition-all duration-500 hover:scale-110 cursor-pointer border-2 hover:border-coral">
+              <Database className="h-10 w-10 text-coral mb-4 group-hover:animate-pulse-glow transition-transform group-hover:scale-125" />
               <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">Data Migration</h3>
               <div className="grid md:grid-cols-4 gap-4 text-muted-foreground group-hover:text-foreground transition-colors">
-                <div>• Legacy products</div>
-                <div>• Paper-based products</div>
-                <div>• Electronic data from various platforms</div>
-                <div>• Electronic data from various sources</div>
+                <div>• <strong className="text-gold">Legacy</strong> products</div>
+                <div>• <strong className="text-coral">Paper-based</strong> products</div>
+                <div>• <strong className="text-gold">Electronic data</strong> from various platforms</div>
+                <div>• <strong className="text-coral">Electronic data</strong> from various sources</div>
               </div>
             </Card>
           </div>
         </div>
 
-        {/* Human & Robot Handshake Section */}
-        <div className="mt-32 relative min-h-[600px] flex items-center justify-center">
-          <div className="absolute inset-0 flex items-center justify-center overflow-hidden">
-            <div className="flex items-center justify-center gap-0 relative">
-              <img 
-                src={humanArm} 
-                alt="Human Partnership" 
-                className="w-80 h-auto opacity-90 animate-fade-in" 
-                style={{ transform: "translateX(20px)" }}
-              />
-              <img 
-                src={robotArm} 
-                alt="AI Innovation" 
-                className="w-80 h-auto opacity-90 transform scale-x-[-1] animate-fade-in" 
-                style={{ animationDelay: "0.3s", transform: "translateX(-20px) scaleX(-1)" }}
-              />
-            </div>
-          </div>
-          <div className="relative z-10 text-center py-20 px-4">
-            <h2 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
-              Human Expertise Meets AI Innovation
-            </h2>
-            <p className="text-xl text-muted-foreground">
-              Where regulatory intelligence and artificial intelligence unite
-            </p>
-          </div>
+        {/* Bottom Tagline */}
+        <div className="mt-32 text-center pb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-coral to-gold">
+            Human Expertise meets Regulatory Intelligence
+          </h2>
         </div>
       </div>
     </div>
