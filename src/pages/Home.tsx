@@ -35,6 +35,152 @@ const Home = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
         </div>
+
+        {/* Animated Network Grid Lines */}
+        <svg
+          className="absolute inset-0 w-full h-full pointer-events-none z-[1]"
+          viewBox="0 0 1920 1080"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            {/* Gold gradient for outgoing lines from India */}
+            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(48 100% 50%)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
+            </linearGradient>
+            
+            {/* Pink pearl gradient for incoming lines to India */}
+            <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="hsl(350 100% 85%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(350 100% 85%)" stopOpacity="0.8" />
+              <stop offset="100%" stopColor="hsl(350 100% 85%)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          {/* India position (approximate center of India) */}
+          <g>
+            {/* Outgoing lines from India (Gold) */}
+            
+            {/* India to USA */}
+            <path
+              d="M 1200 580 Q 800 300 400 480"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2"
+              strokeDasharray="1000"
+              strokeDashoffset="1000"
+              className="animate-[grid-flow_4s_ease-in-out_infinite]"
+            />
+            
+            {/* India to Europe */}
+            <path
+              d="M 1200 580 Q 1100 450 900 520"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2"
+              strokeDasharray="1000"
+              strokeDashoffset="1000"
+              className="animate-[grid-flow_4.5s_ease-in-out_infinite]"
+              style={{ animationDelay: "0.5s" }}
+            />
+            
+            {/* India to China/East Asia */}
+            <path
+              d="M 1200 580 Q 1350 500 1450 560"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2"
+              strokeDasharray="800"
+              strokeDashoffset="800"
+              className="animate-[grid-flow_3.5s_ease-in-out_infinite]"
+              style={{ animationDelay: "1s" }}
+            />
+            
+            {/* India to Australia */}
+            <path
+              d="M 1200 580 Q 1400 750 1500 820"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2"
+              strokeDasharray="900"
+              strokeDashoffset="900"
+              className="animate-[grid-flow_4.2s_ease-in-out_infinite]"
+              style={{ animationDelay: "1.5s" }}
+            />
+            
+            {/* India to Middle East */}
+            <path
+              d="M 1200 580 Q 1100 560 1000 580"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2"
+              strokeDasharray="600"
+              strokeDashoffset="600"
+              className="animate-[grid-flow_3s_ease-in-out_infinite]"
+              style={{ animationDelay: "2s" }}
+            />
+
+            {/* Incoming lines to India (Pink Pearl) */}
+            
+            {/* USA to India */}
+            <path
+              d="M 400 480 Q 800 300 1200 580"
+              fill="none"
+              stroke="url(#pinkGradient)"
+              strokeWidth="2"
+              strokeDasharray="1000"
+              strokeDashoffset="1000"
+              className="animate-[grid-flow_4s_ease-in-out_infinite]"
+              style={{ animationDelay: "2.5s" }}
+            />
+            
+            {/* Europe to India */}
+            <path
+              d="M 900 520 Q 1100 450 1200 580"
+              fill="none"
+              stroke="url(#pinkGradient)"
+              strokeWidth="2"
+              strokeDasharray="1000"
+              strokeDashoffset="1000"
+              className="animate-[grid-flow_4.5s_ease-in-out_infinite]"
+              style={{ animationDelay: "3s" }}
+            />
+            
+            {/* China/East Asia to India */}
+            <path
+              d="M 1450 560 Q 1350 500 1200 580"
+              fill="none"
+              stroke="url(#pinkGradient)"
+              strokeWidth="2"
+              strokeDasharray="800"
+              strokeDashoffset="800"
+              className="animate-[grid-flow_3.5s_ease-in-out_infinite]"
+              style={{ animationDelay: "3.5s" }}
+            />
+            
+            {/* Australia to India */}
+            <path
+              d="M 1500 820 Q 1400 750 1200 580"
+              fill="none"
+              stroke="url(#pinkGradient)"
+              strokeWidth="2"
+              strokeDasharray="900"
+              strokeDashoffset="900"
+              className="animate-[grid-flow_4.2s_ease-in-out_infinite]"
+              style={{ animationDelay: "4s" }}
+            />
+
+            {/* Pulsing dot at India location */}
+            <circle
+              cx="1200"
+              cy="580"
+              r="6"
+              fill="hsl(48 100% 50%)"
+              className="animate-pulse-glow"
+            />
+          </g>
+        </svg>
       </section>
 
       {/* Content Section Below Map */}
