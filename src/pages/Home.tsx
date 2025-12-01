@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Target, Lightbulb } from "lucide-react";
 import worldMapHero from "@/assets/world-map-1945.jpg";
 import { useEffect } from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const Home = () => {
   useEffect(() => {
@@ -181,6 +182,107 @@ const Home = () => {
             />
           </g>
         </svg>
+
+        {/* Interactive Tooltip Points */}
+        <TooltipProvider delayDuration={0}>
+          <div className="absolute inset-0 pointer-events-none">
+            {/* India Hub */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "62.5%", top: "53.7%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold animate-pulse" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-gold">India - Central Hub</p>
+                <p className="text-sm">CDSCO, Ayush, FSSAI regulatory expertise. Strategic gateway for global market access.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* USA */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "20.8%", top: "44.4%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-pink-pearl">United States</p>
+                <p className="text-sm">FDA approvals, IND/NDA submissions, 510(k) clearance, clinical trial support.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Europe */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "46.9%", top: "48.1%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-pink-pearl">European Union</p>
+                <p className="text-sm">EMA submissions, CE marking, MDR/IVDR compliance, centralized procedures.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* China/East Asia */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "75.5%", top: "51.9%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-pink-pearl">China & East Asia</p>
+                <p className="text-sm">NMPA registrations, PMDA Japan submissions, KFDA Korea, ASEAN harmonization.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Australia */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "78.1%", top: "75.9%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-pink-pearl">Australia</p>
+                <p className="text-sm">TGA registrations, ARTG listings, clinical trial notifications, conformity assessments.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Middle East */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "52.1%", top: "53.7%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-pink-pearl">Middle East</p>
+                <p className="text-sm">GCC registrations, Saudi FDA, UAE MOH, halal certification, regional harmonization.</p>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+        </TooltipProvider>
       </section>
 
       {/* Content Section Below Map */}
