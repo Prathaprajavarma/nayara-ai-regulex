@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Target, Lightbulb } from "lucide-react";
-import worldMapHero from "@/assets/world-map-1945.jpg";
+import worldMapHero from "@/assets/world-map-india-centered.jpg";
 import { useEffect } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
