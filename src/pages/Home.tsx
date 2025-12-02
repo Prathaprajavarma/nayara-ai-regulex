@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Target, Lightbulb } from "lucide-react";
-import worldMapHero from "@/assets/world-map-india-centered.jpg";
+import worldMapHero from "@/assets/world-map-dark.jpg";
 import { useEffect } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -28,61 +28,60 @@ const Home = () => {
           className="absolute inset-0 z-0 transition-transform duration-700 ease-out"
           style={{
             backgroundImage: `url(${worldMapHero})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundSize: "180% auto",
+            backgroundPosition: "38% center",
             transform: "scale(1)",
           }}
           id="world-map-bg"
         >
-          <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background" />
         </div>
 
-        {/* Animated Network Grid Lines */}
+        {/* Animated Network Grid Lines - Gold only */}
         <svg
           className="absolute inset-0 w-full h-full pointer-events-none z-[1]"
           viewBox="0 0 1920 1080"
           preserveAspectRatio="xMidYMid slice"
         >
           <defs>
-            {/* Gold gradient for outgoing lines from India */}
+            {/* Gold gradient for all network lines */}
             <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(48 100% 50%)" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="hsl(48 100% 50%)" stopOpacity="0.9" />
               <stop offset="100%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
             </linearGradient>
             
-            {/* Pink pearl gradient for incoming lines to India */}
-            <linearGradient id="pinkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="hsl(350 100% 85%)" stopOpacity="0" />
-              <stop offset="50%" stopColor="hsl(350 100% 85%)" stopOpacity="0.8" />
-              <stop offset="100%" stopColor="hsl(350 100% 85%)" stopOpacity="0" />
+            <linearGradient id="goldGradientReverse" x1="100%" y1="0%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
+              <stop offset="50%" stopColor="hsl(48 100% 50%)" stopOpacity="0.9" />
+              <stop offset="100%" stopColor="hsl(48 100% 50%)" stopOpacity="0" />
             </linearGradient>
           </defs>
 
-          {/* India as the central hub - all lines connect through this point */}
+          {/* India as the central hub - positioned to match map */}
           <g>
             {/* Central pulsing hub at India */}
             <circle
               cx="960"
-              cy="540"
-              r="12"
+              cy="440"
+              r="14"
               fill="hsl(48 100% 50%)"
               opacity="0.3"
               className="animate-pulse"
             />
             <circle
               cx="960"
-              cy="540"
-              r="8"
+              cy="440"
+              r="9"
               fill="hsl(48 100% 50%)"
               className="animate-pulse-glow"
             />
             
-            {/* Outgoing lines from India (Gold) - all start from center */}
+            {/* Network lines from India to other countries (Gold) */}
             
             {/* India to USA */}
             <path
-              d="M 960 540 Q 680 360 400 480"
+              d="M 960 440 Q 600 300 240 380"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -93,7 +92,7 @@ const Home = () => {
             
             {/* India to Europe */}
             <path
-              d="M 960 540 Q 920 480 880 500"
+              d="M 960 440 Q 800 350 680 360"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -105,7 +104,7 @@ const Home = () => {
             
             {/* India to China/East Asia */}
             <path
-              d="M 960 540 Q 1120 480 1280 520"
+              d="M 960 440 Q 1100 380 1240 400"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -117,7 +116,7 @@ const Home = () => {
             
             {/* India to Australia */}
             <path
-              d="M 960 540 Q 1120 680 1280 800"
+              d="M 960 440 Q 1150 600 1380 720"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -129,7 +128,7 @@ const Home = () => {
             
             {/* India to Middle East */}
             <path
-              d="M 960 540 Q 920 540 840 550"
+              d="M 960 440 Q 880 420 800 430"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -141,7 +140,7 @@ const Home = () => {
 
             {/* India to Africa */}
             <path
-              d="M 960 540 Q 860 620 760 700"
+              d="M 960 440 Q 780 520 620 620"
               fill="none"
               stroke="url(#goldGradient)"
               strokeWidth="2.5"
@@ -151,66 +150,52 @@ const Home = () => {
               style={{ animationDelay: "2.5s" }}
             />
 
-            {/* Incoming lines to India (Pink Pearl) - all end at center */}
-            
-            {/* USA to India */}
+            {/* India to Brazil/South America */}
             <path
-              d="M 400 480 Q 680 360 960 540"
+              d="M 960 440 Q 500 550 320 680"
               fill="none"
-              stroke="url(#pinkGradient)"
-              strokeWidth="2.5"
-              strokeDasharray="1000"
-              strokeDashoffset="1000"
-              className="animate-[grid-flow_4s_ease-in-out_infinite]"
-              style={{ animationDelay: "3s" }}
-            />
-            
-            {/* Europe to India */}
-            <path
-              d="M 880 500 Q 920 480 960 540"
-              fill="none"
-              stroke="url(#pinkGradient)"
-              strokeWidth="2.5"
-              strokeDasharray="700"
-              strokeDashoffset="700"
-              className="animate-[grid-flow_3.5s_ease-in-out_infinite]"
-              style={{ animationDelay: "3.5s" }}
-            />
-            
-            {/* China/East Asia to India */}
-            <path
-              d="M 1280 520 Q 1120 480 960 540"
-              fill="none"
-              stroke="url(#pinkGradient)"
-              strokeWidth="2.5"
-              strokeDasharray="800"
-              strokeDashoffset="800"
-              className="animate-[grid-flow_3.8s_ease-in-out_infinite]"
-              style={{ animationDelay: "4s" }}
-            />
-            
-            {/* Australia to India */}
-            <path
-              d="M 1280 800 Q 1120 680 960 540"
-              fill="none"
-              stroke="url(#pinkGradient)"
+              stroke="url(#goldGradient)"
               strokeWidth="2.5"
               strokeDasharray="900"
               strokeDashoffset="900"
-              className="animate-[grid-flow_4.2s_ease-in-out_infinite]"
-              style={{ animationDelay: "4.5s" }}
+              className="animate-[grid-flow_4s_ease-in-out_infinite]"
+              style={{ animationDelay: "3s" }}
             />
-            
-            {/* Africa to India */}
+
+            {/* India to Russia */}
             <path
-              d="M 760 700 Q 860 620 960 540"
+              d="M 960 440 Q 1000 280 1100 220"
               fill="none"
-              stroke="url(#pinkGradient)"
+              stroke="url(#goldGradient)"
               strokeWidth="2.5"
-              strokeDasharray="700"
-              strokeDashoffset="700"
-              className="animate-[grid-flow_3.6s_ease-in-out_infinite]"
-              style={{ animationDelay: "5s" }}
+              strokeDasharray="600"
+              strokeDashoffset="600"
+              className="animate-[grid-flow_3.4s_ease-in-out_infinite]"
+              style={{ animationDelay: "3.5s" }}
+            />
+
+            {/* India to Japan */}
+            <path
+              d="M 960 440 Q 1200 350 1420 360"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2.5"
+              strokeDasharray="800"
+              strokeDashoffset="800"
+              className="animate-[grid-flow_3.7s_ease-in-out_infinite]"
+              style={{ animationDelay: "4s" }}
+            />
+
+            {/* India to Canada */}
+            <path
+              d="M 960 440 Q 600 220 280 260"
+              fill="none"
+              stroke="url(#goldGradient)"
+              strokeWidth="2.5"
+              strokeDasharray="950"
+              strokeDashoffset="950"
+              className="animate-[grid-flow_4.3s_ease-in-out_infinite]"
+              style={{ animationDelay: "4.5s" }}
             />
           </g>
         </svg>
@@ -223,7 +208,7 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-6 h-6 -ml-3 -mt-3 pointer-events-auto cursor-help"
-                  style={{ left: "50%", top: "50%" }}
+                  style={{ left: "50%", top: "40.7%" }}
                 >
                   <div className="w-full h-full rounded-full bg-gold/30 hover:bg-gold/50 transition-colors border-2 border-gold animate-pulse" />
                 </div>
@@ -239,13 +224,13 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "20.8%", top: "44.4%" }}
+                  style={{ left: "12.5%", top: "35.2%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">United States</p>
+                <p className="font-bold text-gold">United States</p>
                 <p className="text-sm">FDA approvals, IND/NDA submissions, 510(k) clearance, clinical trial support.</p>
               </TooltipContent>
             </Tooltip>
@@ -255,13 +240,13 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "45.8%", top: "46.3%" }}
+                  style={{ left: "35.4%", top: "33.3%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">European Union</p>
+                <p className="font-bold text-gold">European Union</p>
                 <p className="text-sm">EMA submissions, CE marking, MDR/IVDR compliance, centralized procedures.</p>
               </TooltipContent>
             </Tooltip>
@@ -271,13 +256,13 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "66.7%", top: "48.1%" }}
+                  style={{ left: "64.6%", top: "37%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">China & East Asia</p>
+                <p className="font-bold text-gold">China & East Asia</p>
                 <p className="text-sm">NMPA registrations, PMDA Japan submissions, KFDA Korea, ASEAN harmonization.</p>
               </TooltipContent>
             </Tooltip>
@@ -287,13 +272,13 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "66.7%", top: "74.1%" }}
+                  style={{ left: "71.9%", top: "66.7%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">Australia</p>
+                <p className="font-bold text-gold">Australia</p>
                 <p className="text-sm">TGA registrations, ARTG listings, clinical trial notifications, conformity assessments.</p>
               </TooltipContent>
             </Tooltip>
@@ -303,13 +288,13 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "43.8%", top: "50.9%" }}
+                  style={{ left: "41.7%", top: "39.8%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">Middle East</p>
+                <p className="font-bold text-gold">Middle East</p>
                 <p className="text-sm">GCC registrations, Saudi FDA, UAE MOH, halal certification, regional harmonization.</p>
               </TooltipContent>
             </Tooltip>
@@ -319,14 +304,78 @@ const Home = () => {
               <TooltipTrigger asChild>
                 <div
                   className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
-                  style={{ left: "39.6%", top: "64.8%" }}
+                  style={{ left: "32.3%", top: "57.4%" }}
                 >
-                  <div className="w-full h-full rounded-full bg-pink-pearl/20 hover:bg-pink-pearl/40 transition-colors border-2 border-pink-pearl" />
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
                 </div>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p className="font-bold text-pink-pearl">Africa</p>
+                <p className="font-bold text-gold">Africa</p>
                 <p className="text-sm">SAHPRA South Africa, NAFDAC Nigeria, regional harmonization initiatives.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Japan */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "74%", top: "33.3%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-gold">Japan</p>
+                <p className="text-sm">PMDA submissions, Shonin approvals, GMP compliance, clinical trials.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Brazil */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "16.7%", top: "63%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-gold">South America</p>
+                <p className="text-sm">ANVISA Brazil, ANMAT Argentina, regional regulatory strategies.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Russia */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "57.3%", top: "20.4%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-gold">Russia</p>
+                <p className="text-sm">Roszdravnadzor registrations, EAEU compliance, CIS market access.</p>
+              </TooltipContent>
+            </Tooltip>
+
+            {/* Canada */}
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div
+                  className="absolute w-4 h-4 -ml-2 -mt-2 pointer-events-auto cursor-help"
+                  style={{ left: "14.6%", top: "24.1%" }}
+                >
+                  <div className="w-full h-full rounded-full bg-gold/20 hover:bg-gold/40 transition-colors border-2 border-gold" />
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p className="font-bold text-gold">Canada</p>
+                <p className="text-sm">Health Canada submissions, NOC approvals, medical device licensing.</p>
               </TooltipContent>
             </Tooltip>
           </div>
