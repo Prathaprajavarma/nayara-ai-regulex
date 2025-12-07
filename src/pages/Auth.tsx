@@ -9,10 +9,12 @@ const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="min-h-screen pt-24 pb-12 flex items-center justify-center">
-      <Card className="w-full max-w-2xl p-8 my-8">
+    <div className="min-h-screen pt-24 pb-12 flex items-center justify-center transition-colors duration-300">
+      <Card className="w-full max-w-2xl p-8 my-8 border-2 border-border">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">{isLogin ? "Login" : "Sign Up"}</h1>
+          <h1 className="text-3xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
+            {isLogin ? "Login" : "Sign Up"}
+          </h1>
           <p className="text-muted-foreground">
             {isLogin ? "Welcome back to NAYARAi" : "Create your NAYARAi account"}
           </p>
@@ -23,19 +25,19 @@ const Auth = () => {
             <>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <Label htmlFor="firstName">First Name *</Label>
-                  <Input id="firstName" placeholder="First name" required />
+                  <Label htmlFor="firstName" className="text-hessonite">First Name *</Label>
+                  <Input id="firstName" placeholder="First name" required className="border-border focus:ring-yellow-sapphire" />
                 </div>
                 <div>
-                  <Label htmlFor="lastName">Last Name *</Label>
-                  <Input id="lastName" placeholder="Last name" required />
+                  <Label htmlFor="lastName" className="text-hessonite">Last Name *</Label>
+                  <Input id="lastName" placeholder="Last name" required className="border-border focus:ring-yellow-sapphire" />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="title">Title *</Label>
+                <Label htmlFor="title" className="text-hessonite">Title *</Label>
                 <Select>
-                  <SelectTrigger>
+                  <SelectTrigger className="border-border focus:ring-yellow-sapphire">
                     <SelectValue placeholder="Select your title" />
                   </SelectTrigger>
                   <SelectContent>
@@ -49,19 +51,19 @@ const Auth = () => {
           )}
 
           <div>
-            <Label htmlFor="email">Email Address *</Label>
-            <Input id="email" type="email" placeholder="Enter your email" required />
+            <Label htmlFor="email" className="text-hessonite">Email Address *</Label>
+            <Input id="email" type="email" placeholder="Enter your email" required className="border-border focus:ring-yellow-sapphire" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <Label htmlFor="password">Password *</Label>
-              <Input id="password" type="password" placeholder="Enter password" required />
+              <Label htmlFor="password" className="text-hessonite">Password *</Label>
+              <Input id="password" type="password" placeholder="Enter password" required className="border-border focus:ring-yellow-sapphire" />
             </div>
             {!isLogin && (
               <div>
-                <Label htmlFor="confirmPassword">Re-Type Password *</Label>
-                <Input id="confirmPassword" type="password" placeholder="Confirm password" required />
+                <Label htmlFor="confirmPassword" className="text-hessonite">Re-Type Password *</Label>
+                <Input id="confirmPassword" type="password" placeholder="Confirm password" required className="border-border focus:ring-yellow-sapphire" />
               </div>
             )}
           </div>
@@ -69,54 +71,54 @@ const Auth = () => {
           {!isLogin && (
             <>
               <div>
-                <Label className="text-lg font-semibold mb-2 block">Phone Number</Label>
+                <Label className="text-lg font-semibold mb-2 block text-yellow-sapphire">Phone Number</Label>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="countryCode">Country Code</Label>
-                    <Input id="countryCode" placeholder="+1" />
+                    <Label htmlFor="countryCode" className="text-hessonite">Country Code</Label>
+                    <Input id="countryCode" placeholder="+1" className="border-border focus:ring-yellow-sapphire" />
                   </div>
                   <div>
-                    <Label htmlFor="mobile">Mobile Number</Label>
-                    <Input id="mobile" placeholder="Mobile number" />
+                    <Label htmlFor="mobile" className="text-hessonite">Mobile Number</Label>
+                    <Input id="mobile" placeholder="Mobile number" className="border-border focus:ring-yellow-sapphire" />
                   </div>
                 </div>
                 <div className="mt-2">
-                  <Label htmlFor="landline">Home Landline</Label>
-                  <Input id="landline" placeholder="Home landline (optional)" />
+                  <Label htmlFor="landline" className="text-hessonite">Home Landline</Label>
+                  <Input id="landline" placeholder="Home landline (optional)" className="border-border focus:ring-yellow-sapphire" />
                 </div>
               </div>
 
               <div>
-                <Label htmlFor="fax">Fax</Label>
-                <Input id="fax" placeholder="Fax number (optional)" />
+                <Label htmlFor="fax" className="text-hessonite">Fax</Label>
+                <Input id="fax" placeholder="Fax number (optional)" className="border-border focus:ring-yellow-sapphire" />
               </div>
 
               <div>
-                <Label htmlFor="altEmail">Alternate Email Address</Label>
-                <Input id="altEmail" type="email" placeholder="Alternate email (optional)" />
+                <Label htmlFor="altEmail" className="text-hessonite">Alternate Email Address</Label>
+                <Input id="altEmail" type="email" placeholder="Alternate email (optional)" className="border-border focus:ring-yellow-sapphire" />
               </div>
 
               <div>
-                <Label className="text-lg font-semibold mb-2 block">Location</Label>
+                <Label className="text-lg font-semibold mb-2 block text-yellow-sapphire">Location</Label>
                 <div className="space-y-2">
                   <div>
-                    <Label htmlFor="city">City</Label>
-                    <Input id="city" placeholder="City" />
+                    <Label htmlFor="city" className="text-hessonite">City</Label>
+                    <Input id="city" placeholder="City" className="border-border focus:ring-yellow-sapphire" />
                   </div>
                   <div>
-                    <Label htmlFor="state">State</Label>
-                    <Input id="state" placeholder="State" />
+                    <Label htmlFor="state" className="text-hessonite">State</Label>
+                    <Input id="state" placeholder="State" className="border-border focus:ring-yellow-sapphire" />
                   </div>
                   <div>
-                    <Label htmlFor="country">Country</Label>
-                    <Input id="country" placeholder="Country" />
+                    <Label htmlFor="country" className="text-hessonite">Country</Label>
+                    <Input id="country" placeholder="Country" className="border-border focus:ring-yellow-sapphire" />
                   </div>
                 </div>
               </div>
             </>
           )}
 
-          <Button className="w-full bg-primary hover:bg-primary/90 mt-6">
+          <Button className="w-full bg-gradient-to-r from-yellow-sapphire to-hessonite text-black hover:opacity-90 mt-6">
             {isLogin ? "Login" : "Sign Up"}
           </Button>
         </form>
@@ -124,7 +126,7 @@ const Auth = () => {
         <div className="mt-6 text-center">
           <button
             onClick={() => setIsLogin(!isLogin)}
-            className="text-coral hover:underline"
+            className="text-yellow-sapphire hover:text-hessonite hover:underline transition-colors"
           >
             {isLogin ? "Don't have an account? Sign Up" : "Already have an account? Login"}
           </button>

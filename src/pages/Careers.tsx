@@ -190,10 +190,12 @@ const Careers = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 transition-colors duration-300">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4">Join Our Team</h1>
+          <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
+            Join Our Team
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Be part of our mission to transform regulatory compliance with cutting-edge AI technology
           </p>
@@ -203,14 +205,14 @@ const Careers = () => {
           {jobs.map((job, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-elegant transition-all duration-300 cursor-pointer group"
+              className="p-6 hover:shadow-elegant transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-yellow-sapphire/30"
               onClick={() => setSelectedJob(job)}
             >
-              <h3 className="text-xl font-bold mb-3 group-hover:text-coral transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-foreground group-hover:text-yellow-sapphire transition-colors">
                 {job.title}
               </h3>
               <p className="text-muted-foreground mb-4">{job.description}</p>
-              <p className="text-sm text-coral font-medium">Click to view details →</p>
+              <p className="text-sm text-hessonite font-medium">Click to view details →</p>
             </Card>
           ))}
         </div>
@@ -219,9 +221,9 @@ const Careers = () => {
       {/* Job Detail Modal */}
       {selectedJob && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-card rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+          <div className="bg-card rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-border">
             <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
-              <h2 className="text-2xl font-bold">{selectedJob.title}</h2>
+              <h2 className="text-2xl font-bold text-yellow-sapphire">{selectedJob.title}</h2>
               <button
                 onClick={() => setSelectedJob(null)}
                 className="p-2 hover:bg-secondary rounded-lg transition-colors"
@@ -232,16 +234,16 @@ const Careers = () => {
 
             <div className="p-6 space-y-6">
               <div>
-                <h3 className="text-lg font-bold mb-3">About the Role</h3>
+                <h3 className="text-lg font-bold mb-3 text-hessonite">About the Role</h3>
                 <p className="text-muted-foreground leading-relaxed">{selectedJob.description}</p>
               </div>
 
               <div>
-                <h3 className="text-lg font-bold mb-3">Key Responsibilities</h3>
+                <h3 className="text-lg font-bold mb-3 text-hessonite">Key Responsibilities</h3>
                 <ul className="space-y-2">
                   {selectedJob.responsibilities.map((resp, idx) => (
                     <li key={idx} className="flex items-start gap-3">
-                      <div className="h-2 w-2 rounded-full bg-coral mt-2" />
+                      <div className="h-2 w-2 rounded-full bg-yellow-sapphire mt-2" />
                       <span className="text-muted-foreground">{resp}</span>
                     </li>
                   ))}
@@ -249,12 +251,12 @@ const Careers = () => {
               </div>
 
               <div>
-                <h3 className="text-lg font-bold mb-3">Required Skills</h3>
+                <h3 className="text-lg font-bold mb-3 text-hessonite">Required Skills</h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedJob.skills.map((skill, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 bg-coral/10 text-coral rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-yellow-sapphire/10 text-yellow-sapphire rounded-full text-sm font-medium"
                     >
                       {skill}
                     </span>
@@ -262,9 +264,9 @@ const Careers = () => {
                 </div>
               </div>
 
-              <div className="pt-6 border-t">
+              <div className="pt-6 border-t border-border">
                 <Link to="/contact">
-                  <Button size="lg" className="w-full bg-primary hover:bg-primary/90">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-yellow-sapphire to-hessonite text-black hover:opacity-90">
                     Apply for this Position
                   </Button>
                 </Link>

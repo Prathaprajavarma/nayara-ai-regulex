@@ -41,10 +41,12 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 transition-colors duration-300">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4">About NAYARAi</h1>
+          <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
+            About NAYARAi
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             NAYARAi is a regulatory company that aides manufacturers in navigating regulatory
             landscapes and strategizes for successful marketization of products. We provide a
@@ -54,26 +56,26 @@ const About = () => {
         </div>
 
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Expert Team</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-foreground">Our Expert Team</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {team.map((member, index) => (
               <Card
                 key={index}
-                className="p-6 hover:shadow-elegant transition-all duration-300 group cursor-pointer"
+                className="p-6 hover:shadow-elegant transition-all duration-300 group cursor-pointer border-2 border-transparent hover:border-yellow-sapphire/30"
               >
                 <div className="mb-4">
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-coral transition-colors">
+                  <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-yellow-sapphire transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-sm text-coral font-medium mb-1">{member.title}</p>
+                  <p className="text-sm text-hessonite font-medium mb-1">{member.title}</p>
                   <p className="text-sm text-muted-foreground mb-2">
                     Experience: {member.experience}
                   </p>
-                  <p className="text-sm font-medium text-gold">{member.expertise}</p>
+                  <p className="text-sm font-medium text-yellow-sapphire">{member.expertise}</p>
                 </div>
 
-                <div className="border-t pt-4 mt-4 space-y-2">
-                  <p className="text-xs text-muted-foreground font-semibold mb-2">Testimonials:</p>
+                <div className="border-t border-border pt-4 mt-4 space-y-2">
+                  <p className="text-xs text-ruby-red font-semibold mb-2">Testimonials:</p>
                   {member.testimonials.map((testimonial, idx) => (
                     <p key={idx} className="text-xs text-muted-foreground italic">
                       • {testimonial}
@@ -83,7 +85,7 @@ const About = () => {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-coral hover:underline mt-2"
+                    className="inline-flex items-center gap-2 text-sm text-yellow-sapphire hover:text-hessonite hover:underline mt-2 transition-colors"
                   >
                     <Linkedin className="h-4 w-4" />
                     LinkedIn
@@ -95,7 +97,7 @@ const About = () => {
 
           <div className="text-center mt-12">
             <Link to="/careers">
-              <Button size="lg" className="bg-primary hover:bg-primary/90">
+              <Button size="lg" className="bg-gradient-to-r from-yellow-sapphire to-hessonite text-black hover:opacity-90 transition-opacity">
                 Join Our Team
               </Button>
             </Link>

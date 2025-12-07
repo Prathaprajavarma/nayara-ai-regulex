@@ -144,10 +144,12 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 transition-colors duration-300">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4">Our Services</h1>
+          <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
+            Our Services
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive regulatory solutions across the product lifecycle
           </p>
@@ -157,19 +159,19 @@ const Services = () => {
           {services.map((service, index) => (
             <Card
               key={index}
-              className="p-6 hover:shadow-elegant transition-all duration-300 cursor-pointer group"
+              className="p-6 hover:shadow-elegant transition-all duration-300 cursor-pointer group border-2 border-transparent hover:border-yellow-sapphire/30"
               onClick={() => handleServiceClick(service)}
             >
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-gradient-coral rounded-xl text-white group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-gradient-to-r from-yellow-sapphire to-hessonite rounded-xl text-black group-hover:scale-110 transition-transform">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold group-hover:text-coral transition-colors">
+                <h3 className="text-xl font-bold text-foreground group-hover:text-yellow-sapphire transition-colors">
                   {service.title}
                 </h3>
               </div>
               <p className="text-muted-foreground">{service.summary}</p>
-              <p className="text-sm text-coral mt-4 font-medium">Click to learn more →</p>
+              <p className="text-sm text-hessonite mt-4 font-medium">Click to learn more →</p>
             </Card>
           ))}
         </div>
@@ -178,13 +180,13 @@ const Services = () => {
       {/* Service Detail Modal */}
       {selectedService && (
         <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 animate-fade-in">
-          <div className="bg-card rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+          <div className="bg-card rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-border">
             <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-gradient-coral rounded-xl text-white">
+                <div className="p-3 bg-gradient-to-r from-yellow-sapphire to-hessonite rounded-xl text-black">
                   {selectedService.icon}
                 </div>
-                <h2 className="text-2xl font-bold">{selectedService.title}</h2>
+                <h2 className="text-2xl font-bold text-yellow-sapphire">{selectedService.title}</h2>
               </div>
               <button
                 onClick={() => setSelectedService(null)}
@@ -195,15 +197,15 @@ const Services = () => {
             </div>
 
             <div className="p-6 space-y-6">
-              <p className="text-lg leading-relaxed">{selectedService.details}</p>
+              <p className="text-lg leading-relaxed text-foreground">{selectedService.details}</p>
 
               {selectedService.features && (
                 <div>
-                  <h3 className="text-lg font-bold mb-3">Key Features:</h3>
+                  <h3 className="text-lg font-bold mb-3 text-hessonite">Key Features:</h3>
                   <ul className="space-y-2">
                     {selectedService.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
-                        <div className="h-2 w-2 rounded-full bg-coral mt-2" />
+                        <div className="h-2 w-2 rounded-full bg-yellow-sapphire mt-2" />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>
                     ))}
@@ -211,9 +213,9 @@ const Services = () => {
                 </div>
               )}
 
-              <div className="pt-6 border-t">
+              <div className="pt-6 border-t border-border">
                 <Link to="/contact">
-                  <Button size="lg" className="w-full bg-primary hover:bg-primary/90">
+                  <Button size="lg" className="w-full bg-gradient-to-r from-yellow-sapphire to-hessonite text-black hover:opacity-90">
                     Schedule a Consultation
                   </Button>
                 </Link>
