@@ -47,6 +47,10 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Brand colors
+        "yellow-sapphire": "hsl(var(--yellow-sapphire))",
+        "hessonite": "hsl(var(--hessonite))",
+        "ruby-red": "hsl(var(--ruby-red))",
         gold: "hsl(var(--gold))",
         "pink-pearl": "hsl(var(--pink-pearl))",
         grey: "hsl(var(--grey))",
@@ -54,7 +58,7 @@ export default {
       },
       backgroundImage: {
         'gradient-gold': 'var(--gradient-gold)',
-        'gradient-pink': 'var(--gradient-pink)',
+        'gradient-hessonite': 'var(--gradient-hessonite)',
         'gradient-hero': 'var(--gradient-hero)',
       },
       boxShadow: {

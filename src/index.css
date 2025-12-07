@@ -4,6 +4,7 @@
 
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
+Color Palette: Yellow Sapphire, Hessonite, Red, Grey, White, Black
 */
 
 @layer base {
@@ -24,15 +25,19 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 10%;
 
     --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 50%;
+    --muted-foreground: 0 0% 45%;
 
     --accent: 48 100% 50%;
     --accent-foreground: 0 0% 10%;
 
-    --gold: 48 100% 50%;
-    --pink-pearl: 350 100% 95%;
+    /* Brand Colors */
+    --yellow-sapphire: 48 100% 50%;
+    --hessonite: 25 85% 45%;
+    --ruby-red: 0 75% 50%;
     --grey: 0 0% 50%;
     --black: 0 0% 10%;
+    --gold: 48 100% 50%;
+    --pink-pearl: 350 100% 95%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -43,8 +48,8 @@ All colors MUST be HSL.
 
     --radius: 0.75rem;
 
-    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%), hsl(45 100% 45%));
-    --gradient-pink: linear-gradient(135deg, hsl(350 100% 95%), hsl(350 100% 90%));
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%), hsl(25 85% 45%));
+    --gradient-hessonite: linear-gradient(135deg, hsl(25 85% 45%), hsl(0 75% 50%));
     --gradient-hero: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
     
     --shadow-elegant: 0 10px 30px -10px hsl(48 100% 50% / 0.3);
@@ -54,42 +59,46 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 15%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 15%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 0 0% 100%;
+    --primary: 0 0% 95%;
     --primary-foreground: 0 0% 10%;
 
-    --secondary: 0 0% 20%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 18%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 70%;
 
     --accent: 48 100% 50%;
     --accent-foreground: 0 0% 10%;
 
+    /* Brand Colors - same in dark mode */
+    --yellow-sapphire: 48 100% 50%;
+    --hessonite: 25 85% 45%;
+    --ruby-red: 0 75% 50%;
+    --grey: 0 0% 60%;
+    --black: 0 0% 10%;
     --gold: 48 100% 50%;
     --pink-pearl: 350 100% 95%;
-    --grey: 0 0% 50%;
-    --black: 0 0% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 25%;
-    --input: 0 0% 20%;
+    --border: 0 0% 22%;
+    --input: 0 0% 18%;
     --ring: 48 100% 50%;
 
-    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%), hsl(45 100% 45%));
-    --gradient-pink: linear-gradient(135deg, hsl(350 100% 95%), hsl(350 100% 90%));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 10%), hsl(0 0% 15%));
+    --gradient-gold: linear-gradient(135deg, hsl(48 100% 50%), hsl(25 85% 45%));
+    --gradient-hessonite: linear-gradient(135deg, hsl(25 85% 45%), hsl(0 75% 50%));
+    --gradient-hero: linear-gradient(180deg, hsl(0 0% 8%), hsl(0 0% 12%));
     
     --shadow-elegant: 0 10px 30px -10px hsl(48 100% 50% / 0.5);
     --shadow-glow: 0 0 40px hsl(48 100% 50% / 0.6);
