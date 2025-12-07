@@ -71,21 +71,23 @@ const Resources = () => {
   }, [selectedProductType, selectedCountry, searchTerm, resourceData]);
 
   return (
-    <div className="min-h-screen pt-24 pb-12">
+    <div className="min-h-screen pt-24 pb-12 transition-colors duration-300">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
-          <h1 className="text-5xl font-bold mb-4">Regulatory Resources</h1>
+          <h1 className="text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
+            Regulatory Resources
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive regulatory documentation by product type and country
           </p>
         </div>
 
-        <Card className="p-6 mb-6">
+        <Card className="p-6 mb-6 border-2 border-border">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
             <div>
-              <label className="text-sm font-medium mb-2 block">Health Product Type</label>
+              <label className="text-sm font-medium mb-2 block text-hessonite">Health Product Type</label>
               <Select value={selectedProductType} onValueChange={setSelectedProductType}>
-                <SelectTrigger>
+                <SelectTrigger className="border-border focus:ring-yellow-sapphire">
                   <SelectValue placeholder="All Product Types" />
                 </SelectTrigger>
                 <SelectContent>
@@ -98,9 +100,9 @@ const Resources = () => {
             </div>
 
             <div>
-              <label className="text-sm font-medium mb-2 block">Country</label>
+              <label className="text-sm font-medium mb-2 block text-hessonite">Country</label>
               <Select value={selectedCountry} onValueChange={setSelectedCountry}>
-                <SelectTrigger>
+                <SelectTrigger className="border-border focus:ring-yellow-sapphire">
                   <SelectValue placeholder="All Countries" />
                 </SelectTrigger>
                 <SelectContent>
@@ -113,43 +115,43 @@ const Resources = () => {
             </div>
 
             <div>
-              <label className="text-sm font-medium mb-2 block">Search Topics</label>
+              <label className="text-sm font-medium mb-2 block text-hessonite">Search Topics</label>
               <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   placeholder="Search by topic or type..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="pl-10"
+                  className="pl-10 border-border focus:ring-yellow-sapphire"
                 />
               </div>
             </div>
           </div>
 
           <div className="text-sm text-muted-foreground mb-4">
-            Showing {filteredData.length} of {resourceData.length} resources
+            Showing <span className="text-yellow-sapphire font-medium">{filteredData.length}</span> of {resourceData.length} resources
           </div>
 
-          <ScrollArea className="h-[600px] w-full rounded-md border">
+          <ScrollArea className="h-[600px] w-full rounded-md border border-border">
             <Table>
-              <TableHeader className="sticky top-0 bg-background z-10">
-                <TableRow>
-                  <TableHead className="w-[25%]">Health Product Type</TableHead>
-                  <TableHead className="w-[20%]">Country</TableHead>
-                  <TableHead className="w-[35%]">Topic</TableHead>
-                  <TableHead className="w-[15%]">Type</TableHead>
-                  <TableHead className="w-[5%] text-center">Download</TableHead>
+              <TableHeader className="sticky top-0 bg-card z-10">
+                <TableRow className="border-b border-border">
+                  <TableHead className="w-[25%] text-hessonite">Health Product Type</TableHead>
+                  <TableHead className="w-[20%] text-hessonite">Country</TableHead>
+                  <TableHead className="w-[35%] text-hessonite">Topic</TableHead>
+                  <TableHead className="w-[15%] text-hessonite">Type</TableHead>
+                  <TableHead className="w-[5%] text-center text-hessonite">Download</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredData.length > 0 ? (
                   filteredData.map((item) => (
-                    <TableRow key={item.id} className="hover:bg-secondary/50 transition-colors">
-                      <TableCell className="font-medium">{item.productType}</TableCell>
-                      <TableCell>{item.country}</TableCell>
-                      <TableCell>{item.topic}</TableCell>
+                    <TableRow key={item.id} className="hover:bg-secondary/50 transition-colors border-b border-border">
+                      <TableCell className="font-medium text-foreground">{item.productType}</TableCell>
+                      <TableCell className="text-foreground">{item.country}</TableCell>
+                      <TableCell className="text-foreground">{item.topic}</TableCell>
                       <TableCell>
-                        <span className="text-xs bg-secondary px-2 py-1 rounded-full">
+                        <span className="text-xs bg-yellow-sapphire/10 text-yellow-sapphire px-2 py-1 rounded-full">
                           {item.topicType}
                         </span>
                       </TableCell>
@@ -157,7 +159,7 @@ const Resources = () => {
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="hover:text-coral transition-colors"
+                          className="hover:text-yellow-sapphire transition-colors"
                           onClick={() => window.open(item.fileUrl, '_blank')}
                         >
                           <Download className="h-4 w-4" />

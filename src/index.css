@@ -111,6 +111,11 @@ Color Palette: Yellow Sapphire, Hessonite, Red, Grey, White, Black
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+  
+  /* Smooth theme transition for all elements */
+  html {
+    @apply transition-colors duration-300;
   }
 }

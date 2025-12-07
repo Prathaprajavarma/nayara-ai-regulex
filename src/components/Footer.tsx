@@ -13,13 +13,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-primary text-primary-foreground mt-20">
+    <footer className="bg-primary text-primary-foreground mt-20 transition-colors duration-300">
       <div className="container mx-auto px-4 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="text-4xl font-serif italic font-bold text-coral">N</div>
+              <div className="text-4xl font-serif italic font-bold text-yellow-sapphire">N</div>
               <div>
                 <h2 className="text-xl font-bold">NAYARAi</h2>
                 <p className="text-xs text-primary-foreground/70">a regulatory company</p>
@@ -32,13 +32,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4 text-yellow-sapphire">Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-primary-foreground/80 hover:text-coral transition-colors"
+                    className="text-sm text-primary-foreground/80 hover:text-yellow-sapphire transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -49,7 +49,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
+            <h3 className="font-semibold text-lg mb-4 text-yellow-sapphire">Services</h3>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>Regulatory Strategy</li>
               <li>Product Submissions</li>
@@ -61,13 +61,13 @@ const Footer = () => {
 
           {/* Social & Subscribe */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Connect With Us</h3>
+            <h3 className="font-semibold text-lg mb-4 text-yellow-sapphire">Connect With Us</h3>
             <div className="flex gap-3 mb-4">
               <a
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                className="p-2 bg-primary-foreground/10 hover:bg-yellow-sapphire hover:text-black rounded-lg transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="h-5 w-5" />
@@ -76,7 +76,7 @@ const Footer = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                className="p-2 bg-primary-foreground/10 hover:bg-yellow-sapphire hover:text-black rounded-lg transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="h-5 w-5" />
@@ -85,7 +85,7 @@ const Footer = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                className="p-2 bg-primary-foreground/10 hover:bg-yellow-sapphire hover:text-black rounded-lg transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="h-5 w-5" />
@@ -94,7 +94,7 @@ const Footer = () => {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 bg-primary-foreground/10 hover:bg-coral rounded-lg transition-colors"
+                className="p-2 bg-primary-foreground/10 hover:bg-yellow-sapphire hover:text-black rounded-lg transition-colors"
                 aria-label="YouTube"
               >
                 <Youtube className="h-5 w-5" />
@@ -103,7 +103,7 @@ const Footer = () => {
             <p className="text-sm text-primary-foreground/80 mb-2">
               Accelerated Approvals with Automated Accordance
             </p>
-            <Link to="/contact" className="text-sm text-coral hover:underline inline-block">
+            <Link to="/contact" className="text-sm text-yellow-sapphire hover:text-hessonite hover:underline inline-block transition-colors">
               Subscribe for Updates →
             </Link>
           </div>
