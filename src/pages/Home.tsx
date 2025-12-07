@@ -387,11 +387,11 @@ const Home = () => {
         <div className="container mx-auto px-4 lg:px-8 text-center animate-fade-in">
           <div className="bg-background/95 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-elegant max-w-5xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink-pearl">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-sapphire to-hessonite">
                 Accelerated Approvals
               </span>
               <br />
-              with Automated Accordance
+              <span className="text-foreground">with Automated Accordance</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
               Expert regulatory strategies and compliance solutions for healthcare products
